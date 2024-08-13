@@ -42,6 +42,8 @@ function wubi86_jidian_date_translator(input, seg)
     if (input == "time") then
         --- Candidate(type, start, end, text, comment)
         yield(Candidate("time", seg.start, seg._end, os.date("%H:%M"), ""))
+        yield(Candidate("time", seg.start, seg._end, os.date("%H:%M:%S"), ""))
+        yield(Candidate("time", seg.start, seg._end, os.date("%Y-%m-%d %H:%M:%S"), ""))
         yield(Candidate("time", seg.start, seg._end, os.date("%Y%m%d%H%M%S"), ""))
         yield(Candidate("time", seg.start, seg._end, os.date("%H:%M:%S"), ""))
     end
